@@ -14,13 +14,13 @@ var handler = {
 	dirty: 0,
 	init: function(){
 		
-		document.getElementById('canvas').addEventListener('keyup', 
+		document.getElementById('gamecanvas').addEventListener('keyup', 
 			function(event){
         		handler.actions[handler.bindings[(event.keyCode)]] = false;
 			
 			}
 		);
-		document.getElementById('canvas').addEventListener('keydown', 
+		document.getElementById('gamecanvas').addEventListener('keydown', 
 			function(event){
 				console.log(event.keyCode);
 				if([32, 37, 38, 39, 40].indexOf(event.keyCode) > -1) {
@@ -30,8 +30,8 @@ var handler = {
         		handler.actions[handler.bindings[(event.keyCode)]] = true;
         	}
         );
-		document.getElementById('canvas').setAttribute('tabindex','0');
-		document.getElementById('canvas').focus();
+		document.getElementById('gamecanvas').setAttribute('tabindex','0');
+		document.getElementById('gamecanvas').focus();
 	
 	},
 	
