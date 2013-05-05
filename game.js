@@ -29,6 +29,7 @@ var game = {
                               window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
   window.requestAnimationFrame = requestAnimationFrame;
 })();
-
-game.init();
-game.loop();
+function start(){
+	game.init();
+	game.loop();
+}
