@@ -36,7 +36,7 @@ Level.prototype = {
 		
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
-			for (var j = this.miny/50; j<this.miny/50 +CANVAS_HEIGHT/MAP_HEIGHT; j++){
+			for (var j = this.miny/50; j<MAP_HEIGHT; j++){
 			
 				if (j * TILE_DIM+TILE_DIM < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
