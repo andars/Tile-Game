@@ -1,4 +1,3 @@
-
 var CANVAS_WIDTH, CANVAS_HEIGHT;
 var ROOT = "https://raw.github.com/andars/Tile-Game/port/";
 var game = {
@@ -13,9 +12,11 @@ var game = {
 		handler.init();
 	},
 	loop: function(time){
+		game.delta = time - game.lasttime;
 		game.render();
-		game.update(time);
+		game.update(delta);
 		window.requestAnimationFrame(game.loop);
+		game.lasttime = time;
 	},
 	render: function(){
 		game.level.render();
