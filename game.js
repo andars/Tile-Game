@@ -12,7 +12,7 @@ var game = {
 		game.render();
 		game.update(time);
 		window.requestAnimationFrame(loop);
-	}
+	},
 	render: function(){
 		game.level.render();
 		game.player.render(game.ctx);
