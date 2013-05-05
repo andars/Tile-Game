@@ -6,10 +6,10 @@ var game = {
 	init: function(){
 		CANVAS_WIDTH = document.getElementById('gamecanvas').width,
 		CANVAS_HEIGHT = document.getElementById('gamecanvas').height;
-		ROOT = 
+		
 		game.ctx = document.getElementById('gamecanvas').getContext('2d');
 		game.player = new Player("player.png");
-		game.level = new Level(ctx);
+		game.level = new Level(game.ctx);
 	},
 	loop: function(time){
 		game.render();
