@@ -32,7 +32,7 @@ Level.prototype = {
 		}
 	},
 	render: function(){
-		console.log(this.miny);
+		//console.log(this.miny);
 		for (var i = Math.floor(this.minx/50); i < MAP_WIDTH; i++){
 		
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
