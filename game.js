@@ -14,7 +14,7 @@ var game = {
 	loop: function(time){
 		game.delta = time - game.lasttime;
 		game.render();
-		game.update(delta);
+		game.update(game.delta);
 		window.requestAnimationFrame(game.loop);
 		game.lasttime = time;
 	},
