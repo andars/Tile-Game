@@ -15,7 +15,8 @@ Level.prototype = {
 	},
 	
 	load: function(name){
-		this.img = 
+		this.img = new Image();
+		this.img.src = ROOT + "tileset.png";;
 		this.tiles[0] = new Tile(0,0, 'grass');
 		this.tiles[1] = new Tile(50,0, 'tree');
 		this.tiles[2] = new Tile(100,0, 'rocktop');

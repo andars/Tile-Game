@@ -1,7 +1,7 @@
 var Player = function(img){
 	
 	this.img = new Image();
-	this.img.src = img;
+	this.img.src = ROOT+img;
 	
 };
 
