@@ -2,7 +2,7 @@ var MAP_WIDTH = 50,
 	MAP_HEIGHT = 50;
 	
 var Level = function(ctx){
-	this.map = Uint16Array(MAP_WIDTH*MAP_HEIGHT);
+	this.map = new Uint16Array(MAP_WIDTH*MAP_HEIGHT);
 	this.minx = 0, this.miny = 0;
 	this.tiles = [];
 	this.entities = [];
