@@ -23,7 +23,7 @@ Level.prototype = {
 		this.tiles[2] = new Tile(100,0, 'rocktop');
 		this.tiles[3] = new Tile(150,0, 'rock');
 		for (var i = 0; i < this.map.length; i++){
-			map[i] = 0;
+			this.map[i] = 0;
 		}
 	},
 	update: function(time){
