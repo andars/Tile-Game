@@ -17,7 +17,7 @@ var handler = {
 		document.getElementById('canvas').addEventListener('keyup', 
 			function(event){
         		handler.actions[handler.bindings[(event.keyCode)]] = false;
-		
+			
 			}
 		);
 		document.getElementById('canvas').addEventListener('keydown', 
@@ -26,6 +26,7 @@ var handler = {
 				if([32, 37, 38, 39, 40].indexOf(event.keyCode) > -1) {
         			event.preventDefault();
     			}
+    			
         		handler.actions[handler.bindings[(event.keyCode)]] = true;
         	}
         );
