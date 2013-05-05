@@ -23,6 +23,7 @@ var game = {
 	},
 	update: function(time){
 		game.level.update(time);
+		game.player.update(time,game.level);
 	}	
 		
 };
