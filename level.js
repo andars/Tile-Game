@@ -11,7 +11,7 @@ var Level = function(ctx){
 }
 Level.prototype = {
 	getTile: function(x,y){
-		return this.tiles[this.map[x * MAP_WIDTH + y]];
+		return this.tiles[this.map[y * MAP_WIDTH + x]];
 	},
 	
 	load: function(name){
@@ -37,8 +37,9 @@ Level.prototype = {
 			for (var j = this.miny/50; j<MAP_HEIGHT; j++){
 				if (j*TILE_DIM+TILE_DIM< this.miny || j*TILE_DIM> this.miny+CANVAS_HEIGHT)
 					continue;
-				this.getTile(i,j).draw(this.ctx, this.img, i * TILE_DIM - this.minx, j * TILE_DIM - this.miny);
 				console.log(i,j);
+				this.getTile(i,j).draw(this.ctx, this.img, i * TILE_DIM - this.minx, j * TILE_DIM - this.miny);
+				
 			}
 		}
 	}
