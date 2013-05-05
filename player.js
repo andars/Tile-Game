@@ -6,7 +6,7 @@ var Player = function(img){
 		x:CANVAS_WIDTH/2,
 		y:CANVAS_HEIGHT/2
 	};
-	this.speed = 1;
+	this.speed = 50;
 	
 };
 
