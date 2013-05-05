@@ -1,5 +1,5 @@
 var Player = function(img){
-	Entity.call(this);
+	
 	this.img = new Image();
 	this.img.src = img;
 	
