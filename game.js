@@ -15,7 +15,7 @@ var game = {
 	loop: function(time){
 		game.render();
 		game.update(time);
-		window.requestAnimationFrame(loop);
+		window.requestAnimationFrame(game.loop);
 	},
 	render: function(){
 		game.level.render();
