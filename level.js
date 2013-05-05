@@ -33,16 +33,16 @@ Level.prototype = {
 	},
 	render: function(){
 		console.log(this.miny);
-		for (var i = this.minx/50; i < MAP_WIDTH; i++){
+		for (var i = Math.floor(this.minx/50); i < MAP_WIDTH; i++){
 		
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
-			for (var j = this.miny/50; j<MAP_HEIGHT; j++){
+			for (var j = Math.floor(this.miny/50); j<MAP_HEIGHT; j++){
 			
 				if (j * TILE_DIM+TILE_DIM < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
 				
-				this.getTile(i,j).draw(this.ctx, this.img, i * TILE_DIM - this.minx, j * TILE_DIM - this.miny);
+				this.getTile(i,j).draw(this.ctx, this.img, (i * TILE_DIM) - this.minx, (j * TILE_DIM) - this.miny);
 				
 			}
 		}
