@@ -31,7 +31,7 @@ Level.prototype = {
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
 			for (var j = this.miny/50; j<MAP_HEIGTH; j++){
-				if (k*TILE_DIM+TILE_DIM< this.miny || k*TILE_DIM> this.miny+600)
+				if (k*TILE_DIM+TILE_DIM< this.miny || k*TILE_DIM> this.miny+CANVAS_HEIGHT)
 					continue;
 				this.getTile(i,j).draw(this.ctx, this.img, i * TILE_DIM - this.minx, j * TILE_DIM - this.miny);
 			}
