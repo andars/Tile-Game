@@ -14,7 +14,7 @@ Player.prototype = {
 	update: function(time, level){
 		if (handler.actions['down']){
 			console.log("update");
-			level.miny += this.speed*time;
+			level.miny += this.speed/1000*time;
 		}
 	},
 	render: function(ctx){
