@@ -21,6 +21,9 @@ Level.prototype = {
 		this.tiles[1] = new Tile(50,0, 'tree');
 		this.tiles[2] = new Tile(100,0, 'rocktop');
 		this.tiles[3] = new Tile(150,0, 'rock');
+		for (var i = 0; i < this.map.length; i++){
+			map[i] = 0;
+		}
 	},
 	update: function(time){
 		for (var i = 0; i < this.entities.length; i++){
