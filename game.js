@@ -1,3 +1,4 @@
+console.log(document.getElementById("gamecanvas"));
 var CANVAS_WIDTH = document.getElementById("gamecanvas").width,
 	CANVAS_HEIGHT = document.getElementById("gamecanvas").height;
 	
