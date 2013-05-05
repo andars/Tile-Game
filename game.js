@@ -1,10 +1,11 @@
-console.log(document.getElementById('gamecanvas'));
-var CANVAS_WIDTH = document.getElementById('gamecanvas').width,
-	CANVAS_HEIGHT = document.getElementById('gamecanvas').height;
+
+var CANVAS_WIDTH, CANVAS_HEIGHT;
 	
 var game = {
 	
 	init: function(){
+		CANVAS_WIDTH = document.getElementById('gamecanvas').width,
+		CANVAS_HEIGHT = document.getElementById('gamecanvas').height;
 		game.ctx = document.getElementById('gamecanvas').getContext('2d');
 		game.player = new Player("player.png");
 		game.level = new Level(ctx);
