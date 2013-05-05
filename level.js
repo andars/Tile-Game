@@ -7,6 +7,7 @@ var Level = function(ctx){
 	this.tiles = [];
 	this.entities = [];
 	this.ctx = ctx;
+	this.load("abc");
 	
 }
 Level.prototype = {
