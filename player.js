@@ -12,7 +12,7 @@ var Player = function(img){
 
 Player.prototype = {
 	update: function(time, level){
-		if (handler.actions['up'])
+		if (handler.actions['down'])
 			level.miny += this.speed*time;
 	},
 	render: function(ctx){
