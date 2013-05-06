@@ -16,6 +16,18 @@ Player.prototype = {
 			console.log("update");
 			level.miny += this.speed*time;
 		}
+		if (handler.actions['up']){
+			console.log("update");
+			level.miny -= this.speed*time;
+		}
+		if (handler.actions['right']){
+			console.log("update");
+			level.minx += this.speed*time;
+		}
+		if (handler.actions['left']){
+			console.log("update");
+			level.minx -= this.speed*time;
+		}
 	},
 	render: function(ctx){
 		ctx.drawImage(this.img, this.pos.x, this.pos.y);
