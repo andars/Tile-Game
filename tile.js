@@ -5,7 +5,7 @@ var Tile = function(x,y,id){
 	this.id = id;
 };
 Tile.prototype = {
-	draw: function(ctx,img,x,y){
+	draw: function(ctx,img,x,y,level){
 		ctx.drawImage(img,this.drawx,this.drawy,TILE_DIM,TILE_DIM,x,y, TILE_DIM, TILE_DIM);
 	}
 };
