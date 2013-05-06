@@ -21,9 +21,14 @@ Tile.prototype = {
 				//northeast
 				ctx.drawImage(img, this.drawx + e?0:(TILE_DIM), this.drawy + n?0:(-TILE_DIM/2), TILE_DIM/2, TILE_DIM/2, x, y, TILE_DIM/2, TILE_DIM/2);
 				//southwest
-				ctx.drawImage(img, this.drawx + e?0:(TILE_DIM), this.drawy + s)
+				ctx.drawImage(img, this.drawx + e?0:(TILE_DIM), this.drawy + s?0:(TILE_DIM), TILE_DIM/2, TILE_DIM/2, x, y, TILE_DIM/2, TILE_DIM/2);
+			}
+			else{
+				ctx.drawImage(img,this.drawx,this.drawy,TILE_DIM,TILE_DIM,x,y, TILE_DIM, TILE_DIM);
 			}
 		}
-		ctx.drawImage(img,this.drawx,this.drawy,TILE_DIM,TILE_DIM,x,y, TILE_DIM, TILE_DIM);
+		else{
+			ctx.drawImage(img,this.drawx,this.drawy,TILE_DIM,TILE_DIM,x,y, TILE_DIM, TILE_DIM);
+		{
 	}
 };
