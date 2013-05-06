@@ -19,15 +19,15 @@ Player.prototype = {
 		}
 		if (handler.actions['up']){
 			console.log("update");
-			level.miny -= this.speed*time;
+			level.miny -= this.speed/1000*time;
 		}
 		if (handler.actions['right']){
 			console.log("update");
-			level.minx += this.speed*time;
+			level.minx += this.speed/1000*time;
 		}
 		if (handler.actions['left']){
 			console.log("update");
-			level.minx -= this.speed*time;
+			level.minx -= this.speed/1000*time;
 		}
 	},
 	render: function(ctx){
