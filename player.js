@@ -6,15 +6,16 @@ var Player = function(img){
 		x:CANVAS_WIDTH/2,
 		y:CANVAS_HEIGHT/2
 	};
-	this.speed = 1;
-	
+
+	this.speed = 50;
+
 };
 
 Player.prototype = {
 	update: function(time, level){
 		if (handler.actions['down']){
 			console.log("update");
-			level.miny += this.speed*time;
+			level.miny += this.speed/1000*time;
 		}
 		if (handler.actions['up']){
 			console.log("update");
