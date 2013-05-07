@@ -19,10 +19,10 @@ Level.prototype = {
 		var that = this;
 		this.img = new Image();
 		this.img.src = ROOT + "tileset.png";
-		this.tiles[1] = new Tile(25,300, 'grass');
+		this.tiles[1] = new Tile(125,25, 'grass');
 		this.tiles[2] = new Tile(125,25, 'tree');
 		this.tiles[0] = new Tile(125,25, 'rocktop');
-		this.tiles[3] = new Tile(150,0, 'rock');
+		this.tiles[3] = new Tile(125,25, 'rock');
 		for (var i = 0; i < this.map.length; i++){
 			this.map[i] = 0;
 		}
