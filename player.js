@@ -13,13 +13,20 @@ var Player = function(img){
 
 Player.prototype = {
 	update: function(time, level){
+		var dist = this.speed/1000*time; 
 		if (handler.actions['down']){
 			console.log("update");
-			level.miny += this.speed/1000*time;
+			level.miny += dist;
 		}
 		if (handler.actions['up']){
 			console.log("update");
-			level.miny -= this.speed/1000*time;
+			if (level.miny > 1 && level.miny + CANVAS_HEIGHT < MAP_HEIGHT*TILE_DIM)
+				level.miny -= dist;
+			else{
+				
+				this.pos.y -= dist;
+			}
+			
 		}
 		if (handler.actions['right']){
 			console.log("update");
