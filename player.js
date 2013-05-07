@@ -16,7 +16,7 @@ Player.prototype = {
 		var dist = this.speed/1000*time; 
 		if (handler.actions['down']){
 			console.log("update");
-			if (this.pos.y+level.miny<CANVAS_HEIGHT/2)
+			if (this.pos.y+level.miny<=CANVAS_HEIGHT/2)
 				this.pos.y += dist;
 			else{
 				level.miny += dist;
@@ -25,7 +25,7 @@ Player.prototype = {
 		}
 		if (handler.actions['up']){
 			console.log("update");
-			if (this.pos.y+level.miny<CANVAS_HEIGHT/2)
+			if (this.pos.y+level.miny<=CANVAS_HEIGHT/2)
 				this.pos.y -= dist;
 			else{
 				level.miny -= dist;
