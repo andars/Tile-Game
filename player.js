@@ -16,20 +16,20 @@ Player.prototype = {
 		var dist = this.speed/1000*time; 
 		if (handler.actions['down']){
 			console.log("update");
-			if (level.miny >= 0 && level.miny + CANVAS_HEIGHT <= MAP_HEIGHT*TILE_DIM)
-				level.miny += dist;
-			else{
-				
+			if (this.pos.x+level.miny<CANVAS_HEIGHT)
 				this.pos.y += dist;
+			else{
+				level.miny += dist;
+			
 			}
 		}
 		if (handler.actions['up']){
 			console.log("update");
-			if (level.miny >= 0 && level.miny + CANVAS_HEIGHT <= MAP_HEIGHT*TILE_DIM)
-				level.miny -= dist;
-			else{
-				
+			if (this.pos.x+level.miny<CANVAS_HEIGHT)
 				this.pos.y -= dist;
+			else{
+				level.miny -= dist;
+			
 			}
 			
 		}
