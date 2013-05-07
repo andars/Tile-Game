@@ -25,6 +25,15 @@ Level.prototype = {
 		for (var i = 0; i < this.map.length; i++){
 			this.map[i] = 0;
 		}
+		var levelreq = new XMLHttpRequest();
+		levelreq.onload = function(){
+			var lev = JSON.parse(this.responseText);
+			for (var i = 0; i<this.map.length; i++){
+				this.map[i]=lev.layers[0].data[i];
+			}
+		}
+		levelreq.open('get',ROOT+'map.json',true);
+		levelreq.send();
 	},
 	update: function(time){
 		for (var i = 0; i < this.entities.length; i++){
