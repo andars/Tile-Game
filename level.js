@@ -32,7 +32,7 @@ Level.prototype = {
 				this.map[i]=lev.layers[0].data[i];
 			}
 		}
-		levelreq.open('get',ROOT+'map.json',true);
+		levelreq.open('get','./'+'map.json',true);
 		levelreq.send();
 	},
 	update: function(time){
