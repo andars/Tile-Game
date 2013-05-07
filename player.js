@@ -16,7 +16,7 @@ Player.prototype = {
 		var dist = this.speed/1000*time; 
 		if (handler.actions['down']){
 			console.log("update");
-			if (level.miny > 1 && level.miny + CANVAS_HEIGHT < MAP_HEIGHT*TILE_DIM)
+			if (level.miny > 0 && level.miny + CANVAS_HEIGHT < MAP_HEIGHT*TILE_DIM)
 				level.miny += dist;
 			else{
 				
@@ -25,7 +25,7 @@ Player.prototype = {
 		}
 		if (handler.actions['up']){
 			console.log("update");
-			if (level.miny > 1 && level.miny + CANVAS_HEIGHT < MAP_HEIGHT*TILE_DIM)
+			if (level.miny > 0 && level.miny + CANVAS_HEIGHT < MAP_HEIGHT*TILE_DIM)
 				level.miny -= dist;
 			else{
 				
