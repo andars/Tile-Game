@@ -16,21 +16,21 @@ Player.prototype = {
 		var dist = this.speed/1000*time; 
 		if (handler.actions.down){
 			
-			level.miny += dist;
+			level.miny =  Math.round(level.miny + dist);
 			
 		}
 		if (handler.actions.up){
 			
-			level.miny -= dist;
+			level.miny =  Math.round(level.miny - dist);
 		
 		}
 		if (handler.actions.right){
-			console.log("update");
-			level.minx += dist;
+		
+			level.minx = Math.round(level.minx + dist);
 		}
 		if (handler.actions.left){
-			console.log("update");
-			level.minx -= dist;
+			
+			level.minx = Math.round(level.minx - dist);
 		}
 	},
 	render: function(ctx){
