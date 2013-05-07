@@ -61,6 +61,9 @@ Level.prototype = {
 
 				if (j * TILE_DIM+(TILE_DIM*2) < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
+				if (this.getTile(i,j)===undefined){
+					console.log(i+','+j);
+				}	
 
 				this.getTile(i,j).draw(this.ctx, this.img, (i * TILE_DIM) - this.minx, (j * TILE_DIM) - this.miny, this, i, j);
 
