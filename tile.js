@@ -10,6 +10,7 @@ Tile.prototype = {
 		
 		if (this.split){
 			//true means not the same tile
+			console.log(n);
 			var n = !level.getTile(tx, ty-1) === this;
 			var s = !level.getTile(tx, ty+1) === this;
 			var w = !level.getTile(tx-1, ty) === this;
