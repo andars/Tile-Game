@@ -14,32 +14,23 @@ var Player = function(img){
 Player.prototype = {
 	update: function(time, level){
 		var dist = this.speed/1000*time; 
-		if (handler.actions['down']){
-			console.log("update");
-			if (this.pos.y+level.miny<=CANVAS_HEIGHT/2)
-				this.pos.y += dist;
-			else{
-				level.miny += dist;
+		if (handler.actions.down){
 			
-			}
-		}
-		if (handler.actions['up']){
-			console.log("update");
-			if (this.pos.y+level.miny<=CANVAS_HEIGHT/2)
-				this.pos.y -= dist;
-			else{
-				level.miny -= dist;
-			
-			}
+			level.miny += dist;
 			
 		}
-		if (handler.actions['right']){
-			console.log("update");
-			level.minx += this.speed/1000*time;
+		if (handler.actions.up){
+			
+			level.miny -= dist;
+		
 		}
-		if (handler.actions['left']){
+		if (handler.actions.right){
 			console.log("update");
-			level.minx -= this.speed/1000*time;
+			level.minx += dist;
+		}
+		if (handler.actions.left){
+			console.log("update");
+			level.minx -= dist;
 		}
 	},
 	render: function(ctx){
