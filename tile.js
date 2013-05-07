@@ -29,6 +29,6 @@ Tile.prototype = {
 		}
 		else{
 			ctx.drawImage(img,this.drawx,this.drawy,TILE_DIM,TILE_DIM,x,y, TILE_DIM, TILE_DIM);
-		{
+		}
 	}
 };
