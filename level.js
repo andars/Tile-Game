@@ -50,11 +50,12 @@ Level.prototype = {
 		this.miny = this.miny<0?0:this.miny;
 		this.minx = this.minx<0?0:this.minx;
 		var i = Math.round(this.minx/50)>=1?Math.round(this.minx/50)-1:0
+		var j = Math.round(this.miny/50)>=1?Math.round(this.miny/50)-1:0
 		for (; i < MAP_WIDTH; i++){
 		
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
-			for (var j = Math.round(this.miny/50); j<MAP_HEIGHT; j++){
+			for (; j<MAP_HEIGHT; j++){
 			
 				if (j * TILE_DIM+(TILE_DIM*2) < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
