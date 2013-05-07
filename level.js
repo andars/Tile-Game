@@ -16,6 +16,7 @@ Level.prototype = {
 	},
 	
 	load: function(name){
+		var that = this;
 		this.img = new Image();
 		this.img.src = ROOT + "tileset.png";;
 		this.tiles[0] = new Tile(0,0, 'grass');
@@ -28,8 +29,8 @@ Level.prototype = {
 		var levelreq = new XMLHttpRequest();
 		levelreq.onload = function(){
 			var lev = JSON.parse(this.responseText);
-			for (var i = 0; i<this.map.length; i++){
-				this.map[i]=lev.layers[0].data[i];
+			for (var i = 0; i<that.map.length; i++){
+				that.map[i]=lev.layers[0].data[i];
 			}
 		}
 		levelreq.open('get','./'+'map.json',true);
