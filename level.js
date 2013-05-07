@@ -55,7 +55,7 @@ Level.prototype = {
 
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
-			var j = Math.round(this.miny/50);
+			var j = Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
 			for (; j<MAP_HEIGHT; j++){
 
 				if (j * TILE_DIM+(TILE_DIM*2) < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
