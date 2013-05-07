@@ -19,10 +19,10 @@ Level.prototype = {
 		var that = this;
 		this.img = new Image();
 		this.img.src = ROOT + "tileset.png";
-		this.tiles[0] = new Tile(50,0, 'tree');
-		this.tiles[1] = new Tile(125,25, 'grass');
-		this.tiles[2] = new Tile(125,25, 'rock');
-		this.tiles[3] = new Tile(150,0, 'rock');
+		this.tiles[1] = new Tile(25,300, 'grass');
+		this.tiles[2] = new Tile(50,0, 'tree');
+		this.tiles[0] = new Tile(125,25, 'rocktop');
+		this.tiles[3] = new Tile(125,25, 'rock');
 		for (var i = 0; i < this.map.length; i++){
 			this.map[i] = 0;
 		}
@@ -50,16 +50,20 @@ Level.prototype = {
 		this.miny = this.miny<0?0:this.miny;
 		this.minx = this.minx<0?0:this.minx;
 		var i = Math.round(this.minx/50)>=1?Math.round(this.minx/50)-1:0;
-		
+		 i = i<0?0:i;
 		for (; i < MAP_WIDTH; i++){
 
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
-			var j = Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
+			var j = Math.round(this.miny/50)-1;//Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
+			j = j<0?0:j;
 			for (; j<MAP_HEIGHT; j++){
 
 				if (j * TILE_DIM+(TILE_DIM*2) < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
+				if (this.getTile(i,j)===undefined){
+					console.log(i+','+j);
+				}	
 
 				this.getTile(i,j).draw(this.ctx, this.img, (i * TILE_DIM) - this.minx, (j * TILE_DIM) - this.miny, this, i, j);
 
