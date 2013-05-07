@@ -19,6 +19,7 @@ var game = {
 		game.lasttime = time;
 	},
 	render: function(){
+		game.ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
 		game.level.render();
 		game.player.render(game.ctx);
 	},
