@@ -49,13 +49,13 @@ Level.prototype = {
 		//console.log(this.miny);
 		this.miny = this.miny<0?0:this.miny;
 		this.minx = this.minx<0?0:this.minx;
-		for (var i = Math.round(this.minx/50)-1; i < MAP_WIDTH; i++){
+		for (var i = Math.round(this.minx/50); i < MAP_WIDTH; i++){
 		
-			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
+			if (i * TILE_DIM + TILE_DIM <= this.minx-TILE_DIM || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
-			for (var j = Math.round(this.miny/50)-1; j<MAP_HEIGHT; j++){
+			for (var j = Math.round(this.miny/50); j<MAP_HEIGHT; j++){
 			
-				if (j * TILE_DIM+TILE_DIM < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
+				if (j * TILE_DIM+TILE_DIM < this.miny-TILE_DIM || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
 				
 				this.getTile(i,j).draw(this.ctx, this.img, (i * TILE_DIM) - this.minx, (j * TILE_DIM) - this.miny, this, i, j);
