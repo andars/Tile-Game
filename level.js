@@ -31,6 +31,9 @@ Level.prototype = {
 			var lev = JSON.parse(this.responseText);
 			for (var i = 0; i<that.map.length; i++){
 				that.map[i]=lev.layers[0].data[i];
+				if (that.map[i]>3){
+					that.map[i]=0;
+				}
 			}
 		}
 		levelreq.open('get','./'+'map.json',true);
