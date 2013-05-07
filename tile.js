@@ -11,8 +11,8 @@ Tile.prototype = {
 		if (this.split){
 			//false means not the same tile
 			//console.log(n);
-			var n = level.getTile(tx, ty-1) === this;
-			var s = level.getTile(tx, ty+1) === this;
+			var n = level.getTile(tx, ty-1).id == this.id;
+			var s = level.getTile(tx, ty+1).id == this.id;
 			var w = level.getTile(tx-1, ty) === this;
 			var e = level.getTile(tx+1, ty) === this;
 			if (!n||!s||!w||!e){
