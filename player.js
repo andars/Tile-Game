@@ -38,8 +38,9 @@ Player.prototype = {
 			this.pos.y += dy;
 		}
 	},
-	render: function(ctx, wx, wy){
-		ctx.drawImage(this.img, this.pos.x-wx, this.pos.y-wy);
+	render: function(ctx, ){
+	
+		ctx.drawImage(this.img, this.pos.x-this.pos.x-(CANVAS_WIDTH>>1), this.pos.y-this.pos.y-(CANVAS_HEIGHT>>1));
 	}
 };
 	
