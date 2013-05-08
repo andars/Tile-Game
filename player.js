@@ -14,7 +14,7 @@ var Player = function(img){
 Player.prototype = {
 	update: function(time, level){
 		var dist = this.speed/1000*time|0;
-		console.log(dist);
+		//console.log(dist);
 		var dx, dy;
 		if (handler.actions.down){
 			
