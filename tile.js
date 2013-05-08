@@ -1,9 +1,10 @@
 var TILE_DIM = 50;
 
-var Tile = function(x,y,id){
+var Tile = function(x,y,id, blocks){
 	this.drawx = x, this.drawy = y;
 	this.id = id;
 	this.split = true;
+	this.blocks = blocks;
 };
 Tile.prototype = {
 	draw: function(ctx,img,x,y,level, tx, ty){
