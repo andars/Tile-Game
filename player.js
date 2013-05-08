@@ -13,28 +13,33 @@ var Player = function(img){
 
 Player.prototype = {
 	update: function(time, level){
-		var dist = this.speed/1000*time; 
+		var dist = Math.round(this.speed/1000*time);
+		var dx, dy;
 		if (handler.actions.down){
 			
-			level.miny =  Math.round(level.miny + dist);
+			dy += dist;
 			
 		}
 		if (handler.actions.up){
 			
-			level.miny =  Math.round(level.miny - dist);
+			dy -= dist;
 		
 		}
 		if (handler.actions.right){
 		
-			level.minx = Math.round(level.minx + dist);
+			dx += dist;
 		}
 		if (handler.actions.left){
 			
-			level.minx = Math.round(level.minx - dist);
+			dx -= dist;
+		}
+		if (!level.getTile(this.pos.x/TILE_DIM,this.pos.y/TILE_DIM).blocks){
+			this.pos.x += dx;
+			this.pos.y += dy;
 		}
 	},
-	render: function(ctx){
-		ctx.drawImage(this.img, this.pos.x, this.pos.y);
+	render: function(ctx, wx, wy){
+		ctx.drawImage(this.img, this.pos.x-wx, this.pos.y-wy);
 	}
 };
 	
