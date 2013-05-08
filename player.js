@@ -13,7 +13,7 @@ var Player = function(img){
 
 Player.prototype = {
 	update: function(time, level){
-		var dist = Math.round(this.speed/1000*time);
+		var dist = this.speed/1000*time|0;
 		console.log(dist);
 		var dx, dy;
 		if (handler.actions.down){
