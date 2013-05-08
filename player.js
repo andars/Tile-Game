@@ -33,7 +33,7 @@ Player.prototype = {
 			
 			dx -= dist;
 		}
-		if (!level.getTile(this.pos.x/TILE_DIM,this.pos.y/TILE_DIM).blocks){
+		if (!level.getTile(this.pos.x/TILE_DIM|0,this.pos.y/TILE_DIM|0).blocks){
 			this.pos.x += dx;
 			this.pos.y += dy;
 		}
