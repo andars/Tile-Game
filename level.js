@@ -8,7 +8,7 @@ var Level = function(ctx){
 	this.entities = [];
 	this.ctx = ctx;
 	this.load("abc");
-	this.player = new Player();
+	
 }
 Level.prototype = {
 	getTile: function(x,y){
@@ -69,6 +69,6 @@ Level.prototype = {
 
 			}
 		}
-		this.player.render(this.ctx, this.minx, this.miny)
+		
 	}
 };
