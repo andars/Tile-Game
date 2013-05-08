@@ -47,8 +47,8 @@ Level.prototype = {
 	render: function(){
 
 		//console.log(this.miny);
-		this.miny = player.pos.y-(CANVAS_HEIGHT>>1);
-		this.minx = player.pos.x-(CANVAS_WIDTH>>1);
+		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
+		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1);
 		var i = Math.round(this.minx/50)>=1?Math.round(this.minx/50)-1:0;
 		 i = i<0?0:i;
 		for (; i < MAP_WIDTH; i++){
