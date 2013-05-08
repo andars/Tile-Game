@@ -3,8 +3,8 @@ var Player = function(img){
 	this.img = new Image();
 	this.img.src = ROOT+img;
 	this.pos = {
-		x:800/2,
-		y:600/2
+		x:400,
+		y:300
 	};
 
 	this.speed = 50;
