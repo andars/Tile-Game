@@ -13,7 +13,7 @@ var Player = function(img){
 
 Player.prototype = {
 	update: function(time, level){
-		var dist = (this.speed/1000)*time|0;
+		var dist = Math.round(this.speed/1000)*time);
 		//console.log(dist);
 		var dx=0, dy=0;
 		if (handler.actions.down){
@@ -34,7 +34,7 @@ Player.prototype = {
 			
 			dx -= dist;
 		}
-		if (!level.getTile(this.pos.x/TILE_DIM|0,this.pos.y/TILE_DIM|0).blocks){
+		if (!level.getTile((this.pos.x/TILE_DIM)|0,(this.pos.y/TILE_DIM)|0).blocks){
 			this.pos.x += dx;
 			this.pos.y += dy;
 		}
