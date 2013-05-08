@@ -38,7 +38,7 @@ Player.prototype = {
 			this.pos.y += dy;
 		}
 	},
-	render: function(ctx, ){
+	render: function(ctx ){
 	
 		ctx.drawImage(this.img, this.pos.x-this.pos.x-(CANVAS_WIDTH>>1), this.pos.y-this.pos.y-(CANVAS_HEIGHT>>1));
 	}
