@@ -34,14 +34,20 @@ Player.prototype = {
 			
 			dx -= dist;
 		}
-		if (!level.getTile((this.pos.x/TILE_DIM)|0,(this.pos.y/TILE_DIM)|0).blocks){
-			this.pos.x += dx;
-			this.pos.y += dy;
-		}
+		this.move(dx,dy);
 	},
 	render: function(ctx ){
 	
 		ctx.drawImage(this.img, this.pos.x-(this.pos.x-(CANVAS_WIDTH>>1)), this.pos.y-(this.pos.y - (CANVAS_HEIGHT>>1)));
+	}
+	move: function(dx, dy){
+		var tx0 = (this.pos.x+dx)/50|0,
+			tx1 = (this.pos.x+50+dx)/50|0,
+			ty0 = (this.pos.y+dy)/50|0;
+		if (level.getTile(tx0,ty0).blocked) return;
+		if (level.getTile(tx1,ty0).blocked) return;
+		this.pos.x += dx;
+		this.pos.y += dy;
 	}
 };
 	
