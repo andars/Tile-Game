@@ -42,7 +42,7 @@ Player.prototype = {
 	},
 	move: function(dx, dy,level){
 		var tx0 = (this.pos.x+dx)/TILE_DIM|0,
-			tx1 = (this.pos.x+50+dx)/DILE_DIM|0,
+			tx1 = (this.pos.x+50+dx)/TILE_DIM|0,
 			ty0 = (this.pos.y+dy)/TILE_DIM|0;
 		if (level.getTile(tx0,ty0).blocks) return;
 		if (level.getTile(tx1,ty0).blocks) return;
