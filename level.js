@@ -49,14 +49,14 @@ Level.prototype = {
 		//console.log(this.miny);
 		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
 		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1);
-		var i = Math.floor(this.minx/50);
-		 i = i<0?0:i;
+		var i = Math.floor(this.minx/TILE_DIM);
+		 //i = i<0?0:i;
 		for (; i < MAP_WIDTH; i++){
 
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
-			var j = Math.floor(this.miny/50);//Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
-			j = j<0?0:j;
+			var j = Math.floor(this.miny/TILE_DIM);//Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
+			//j = j<0?0:j;
 			for (; j<MAP_HEIGHT; j++){
 
 				if (j * TILE_DIM+(TILE_DIM*2) < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
