@@ -39,7 +39,7 @@ Player.prototype = {
 	render: function(ctx ){
 	
 		ctx.drawImage(this.img, this.pos.x-(this.pos.x-(CANVAS_WIDTH>>1)), this.pos.y-(this.pos.y - (CANVAS_HEIGHT>>1)));
-	}
+	},
 	move: function(dx, dy){
 		var tx0 = (this.pos.x+dx)/50|0,
 			tx1 = (this.pos.x+50+dx)/50|0,
