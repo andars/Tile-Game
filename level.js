@@ -19,10 +19,10 @@ Level.prototype = {
 		var that = this;
 		this.img = new Image();
 		this.img.src = ROOT + "tileset.png";
-		this.tiles[1] = new Tile(25,300, 'grass');
-		this.tiles[2] = new Tile(50,0, 'tree');
-		this.tiles[0] = new Tile(125,25, 'rocktop');
-		this.tiles[3] = new Tile(125,25, 'rock');
+		this.tiles[1] = new Tile(25,300, 'grass', false);
+		this.tiles[2] = new Tile(50,0, 'tree',true);
+		this.tiles[0] = new Tile(125,25, 'rock', true);
+		
 		for (var i = 0; i < this.map.length; i++){
 			this.map[i] = 0;
 		}
@@ -31,7 +31,7 @@ Level.prototype = {
 			var lev = JSON.parse(this.responseText);
 			for (var i = 0; i<that.map.length; i++){
 				that.map[i]=lev.layers[0].data[i];
-				if (that.map[i]>3){
+				if (that.map[i]>2){
 					that.map[i]=0;
 				}
 			}
@@ -47,8 +47,8 @@ Level.prototype = {
 	render: function(){
 
 		//console.log(this.miny);
-		this.miny = this.miny<0?0:this.miny;
-		this.minx = this.minx<0?0:this.minx;
+		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
+		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1);
 		var i = Math.round(this.minx/50)>=1?Math.round(this.minx/50)-1:0;
 		 i = i<0?0:i;
 		for (; i < MAP_WIDTH; i++){
@@ -69,5 +69,6 @@ Level.prototype = {
 
 			}
 		}
+		
 	}
 };
