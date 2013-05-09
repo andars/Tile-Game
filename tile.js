@@ -1,4 +1,4 @@
-var TILE_DIM = 50;
+var TILE_DIM = 64;
 
 var Tile = function(x,y,id, blocks){
 	this.drawx = x, this.drawy = y;
@@ -18,7 +18,7 @@ Tile.prototype = {
 			var e = level.getTile(tx+1, ty) === this;
 			if (!n||!s||!w||!e){
 				//northwest
-				ctx.drawImage(img, this.drawx - (w?0:25), this.drawy + (n?0:(-TILE_DIM/2)), TILE_DIM/2,TILE_DIM/2,x,y,TILE_DIM/2,TILE_DIM/2);
+				ctx.drawImage(img, this.drawx + (w?0:(-TILE_DIM/2)), this.drawy + (n?0:(-TILE_DIM/2)), TILE_DIM/2,TILE_DIM/2,x,y,TILE_DIM/2,TILE_DIM/2);
 				//southwest
 				ctx.drawImage(img, this.drawx + (w?0:(-TILE_DIM/2)), this.drawy + (s?0:(TILE_DIM)), TILE_DIM/2, TILE_DIM/2, x, y+TILE_DIM/2,TILE_DIM/2,TILE_DIM/2);
 				//northeast
