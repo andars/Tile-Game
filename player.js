@@ -44,8 +44,8 @@ Player.prototype = {
 		var tx0 = (this.pos.x+dx)/50|0,
 			tx1 = (this.pos.x+50+dx)/50|0,
 			ty0 = (this.pos.y+dy)/50|0;
-		if (level.getTile(tx0,ty0).blocked) return;
-		if (level.getTile(tx1,ty0).blocked) return;
+		if (level.getTile(tx0,ty0).blocks) return;
+		if (level.getTile(tx1,ty0).blocks) return;
 		this.pos.x += dx;
 		this.pos.y += dy;
 	}
