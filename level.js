@@ -19,9 +19,9 @@ Level.prototype = {
 		var that = this;
 		this.img = new Image();
 		this.img.src = ROOT + "tileset.png";
-		this.tiles[1] = new Tile(32,32, 'grass', false);
-		this.tiles[2] = new Tile(50,0, 'tree',true);
-		this.tiles[0] = new Tile(160,32, 'rock', true);
+		this.tiles[0] = new Tile(32,32, 'grass', false);
+		this.tiles[3] = new Tile(256,0, 'tree',true);
+		this.tiles[1] = new Tile(160,32, 'rock', true);
 		
 		for (var i = 0; i < this.map.length; i++){
 			this.map[i] = 0;
