@@ -8,7 +8,7 @@ var Level = function(ctx){
 	this.entities = [];
 	this.ctx = ctx;
 	this.load("abc");
-	
+	this.loaded = false;
 }
 Level.prototype = {
 	getTile: function(x,y){
@@ -35,6 +35,7 @@ Level.prototype = {
 					that.map[i]=1;
 				}
 			}
+			that.loaded = true;
 		}
 		levelreq.open('get','./'+'map.json',true);
 		levelreq.send();
@@ -45,7 +46,7 @@ Level.prototype = {
 		}
 	},
 	render: function(){
-
+		if (!this.loaded) return;
 		//console.log(this.miny);
 		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
 		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1)>0?game.player.pos.x-(CANVAS_WIDTH>>1):0;
