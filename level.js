@@ -9,6 +9,8 @@ var Level = function(ctx){
 	this.ctx = ctx;
 	this.load("abc");
 	this.loaded = false;
+	this.htiles = CANVAS_WIDTH/TILE_DIM;
+	this.vtiles = CANVAS_HEIGHT/TILE_DIM;
 }
 Level.prototype = {
 	getTile: function(x,y){
@@ -51,14 +53,17 @@ Level.prototype = {
 		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
 		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1)>0?game.player.pos.x-(CANVAS_WIDTH>>1):0;
 		var i = Math.floor(this.minx/TILE_DIM);
+		var h_end= i +this.htiles;
+		var j = Math.floor(this.miny/TILE_DIM);
+		var v_end = j + this.vtiles''
 		 //i = i<0?0:i;
-		for (; i < MAP_WIDTH; i++){
+		for (; i < h_end; i++){
 
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
-			var j = Math.floor(this.miny/TILE_DIM);//Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
+			//Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
 			//j = j<0?0:j;
-			for (; j<MAP_HEIGHT; j++){
+			for (; j<v_end; j++){
 
 				if (j * TILE_DIM+(TILE_DIM*2) < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
