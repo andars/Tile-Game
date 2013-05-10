@@ -9,16 +9,21 @@ var game = {
 		game.ctx = document.getElementById('gamecanvas').getContext('2d');
 		game.player = new Player("player.png");
 		game.level = new Level(game.ctx);
+		
+		//timing
+		game.fps = 40;
+		game.then = window.performance.now();
+		game.interval = 1000/game.fps;
 		handler.init();
 	},
 	loop: function(time){
-		
-		game.delta = time - game.lasttime;
-		game.render();
-		game.update(game.delta);
 		window.requestAnimationFrame(game.loop);
-		game.lasttime = time;
-	
+		game.delta = time - game.then;
+		if(game.delta>game.interval){	
+			game.update(game.delta);
+			game.then = time-(game.delta%game.interval);
+			game.render();
+		}
 	},
 	render: function(){
 		if(game.level.loaded){
