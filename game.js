@@ -12,20 +12,26 @@ var game = {
 		handler.init();
 	},
 	loop: function(time){
+		
 		game.delta = time - game.lasttime;
 		game.render();
 		game.update(game.delta);
 		window.requestAnimationFrame(game.loop);
 		game.lasttime = time;
+	
 	},
 	render: function(){
+		if(game.level.loaded){
 		game.ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
 		game.level.render();
 		game.player.render(game.ctx);
+		}
 	},
 	update: function(time){
+		if(game.level.loaded){
 		game.level.update(time);
 		game.player.update(time,game.level);
+		}
 	}	
 		
 };
