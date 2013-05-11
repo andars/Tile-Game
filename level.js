@@ -6,15 +6,22 @@ var Level = function(ctx){
 	this.minx = 0, this.miny = 0;
 	this.tiles = [];
 	this.entities = [];
-	this.ctx = ctx;
+	this.gamectx = ctx;
 	this.load("abc");
 	this.loaded = false;
 	this.htiles = Math.ceil(CANVAS_WIDTH/TILE_DIM);
 	this.vtiles = Math.ceil(CANVAS_HEIGHT/TILE_DIM);
+	this.mapcanvas = document.createElement('canvas');
+	this.mapcanvas.width= MAP_WIDTH * TILE_DIM;
+	this.mapcanvas.height = MAP_WIDTH * TILE_DIM;
+	this.mapctx = this.mapcanvas.getContext('2d');
 }
 Level.prototype = {
 	getTile: function(x,y){
 		return this.tiles[this.map[y * MAP_WIDTH + x]];
+	},
+	setTile: function(x,y,id){
+		this.map[y*MAP_WIDTH+x]=id;
 	},
 	
 	load: function(name){
@@ -38,6 +45,7 @@ Level.prototype = {
 				}
 			}
 			that.loaded = true;
+			that.rendermap();
 		}
 		levelreq.open('get','./'+'map.json',true);
 		levelreq.send();
@@ -47,35 +55,41 @@ Level.prototype = {
 			this.entities[i].update(time);
 		}
 	},
-	render: function(){
+	rendermap: function(){
 		if (!this.loaded) return;
 		//console.log(this.miny);
-		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
-		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1);//>0?game.player.pos.x-(CANVAS_WIDTH>>1):0;
-		var i = Math.floor(this.minx/TILE_DIM);
+		//>0?game.player.pos.x-(CANVAS_WIDTH>>1):0;
+		/*var i = Math.floor(this.minx/TILE_DIM);
 		var h_end= i +this.htiles;
-		var j, v_end;
+		var j, v_end;*/
 		 //i = i<0?0:i;
-		for (; i < h_end; i++){
-
+		for (var i =0; i < MAP_WIDTH; i++){
+			/*
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
 			//Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
 			j = Math.floor(this.miny/TILE_DIM);
 			v_end = j +this.vtiles;
 			//j = j<0?0:j;
-			for (; j<v_end; j++){
-
+			*/
+			for (var j = 0; j<v_end; j++){
+				/*
 				if (j * TILE_DIM+(TILE_DIM*2) < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
+				*/
 				if (this.getTile(i,j)===undefined){
 					console.log(i+','+j);
 				}	
 
-				this.getTile(i,j).draw(this.ctx, this.img, (i * TILE_DIM) - this.minx, (j * TILE_DIM) - this.miny, this, i, j);
+				this.getTile(i,j).draw(this.mapctx, this.img, (i * TILE_DIM), (j * TILE_DIM), this, i, j);
 
 			}
 		}
 		
+	},
+	render:function(){
+		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
+		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1);
+		this.gamectx.drawImage(this.mapcanvas,this.minx, this.miny, CANVAS_WIDTH, CANVAS_HEIGHT, 0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
 	}
 };
