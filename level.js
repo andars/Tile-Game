@@ -72,7 +72,7 @@ Level.prototype = {
 			v_end = j +this.vtiles;
 			//j = j<0?0:j;
 			*/
-			for (var j = 0; j<v_end; j++){
+			for (var j = 0; j < MAP_HEIGHT; j++){
 				/*
 				if (j * TILE_DIM+(TILE_DIM*2) < this.miny || j * TILE_DIM > this.miny + CANVAS_HEIGHT)
 					continue;
