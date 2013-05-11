@@ -59,6 +59,7 @@ Level.prototype = {
 	},
 	rendermap: function(){
 		if (!this.loaded) return;
+		console.log('map rendered');
 		//console.log(this.miny);
 		//>0?game.player.pos.x-(CANVAS_WIDTH>>1):0;
 		/*var i = Math.floor(this.minx/TILE_DIM);
