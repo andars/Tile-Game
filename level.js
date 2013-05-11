@@ -7,7 +7,7 @@ var Level = function(ctx){
 	this.tiles = [];
 	this.entities = [];
 	this.gamectx = ctx;
-	this.load("abc");
+	
 	this.loaded = false;
 	this.htiles = Math.ceil(CANVAS_WIDTH/TILE_DIM);
 	this.vtiles = Math.ceil(CANVAS_HEIGHT/TILE_DIM);
@@ -16,6 +16,7 @@ var Level = function(ctx){
 	this.mapcanvas.height = MAP_WIDTH * TILE_DIM;
 	this.mapctx = this.mapcanvas.getContext('2d');
 	this.dirtymap = true;
+	this.load("abc");
 }
 Level.prototype = {
 	getTile: function(x,y){
