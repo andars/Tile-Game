@@ -54,14 +54,15 @@ Level.prototype = {
 		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1);//>0?game.player.pos.x-(CANVAS_WIDTH>>1):0;
 		var i = Math.floor(this.minx/TILE_DIM);
 		var h_end= i +this.htiles;
-		var j = Math.floor(this.miny/TILE_DIM);
-		var v_end = j + this.vtiles;
+		var j, v_end;
 		 //i = i<0?0:i;
 		for (; i < h_end; i++){
 
 			if (i * TILE_DIM + TILE_DIM <= this.minx || i*TILE_DIM>(this.minx+CANVAS_WIDTH))
 				continue;
 			//Math.round(this.miny/50)>=1?Math.round(this.minx/50)-1:0;
+			j = Math.floor(this.miny/TILE_DIM);
+			v_end = j +this.vtiles;
 			//j = j<0?0:j;
 			for (; j<v_end; j++){
 
