@@ -55,7 +55,7 @@ Level.prototype = {
 		var i = Math.floor(this.minx/TILE_DIM);
 		var h_end= i +this.htiles;
 		var j = Math.floor(this.miny/TILE_DIM);
-		var v_end = j + this.vtiles''
+		var v_end = j + this.vtiles;
 		 //i = i<0?0:i;
 		for (; i < h_end; i++){
 
