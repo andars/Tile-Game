@@ -51,7 +51,7 @@ Level.prototype = {
 		if (!this.loaded) return;
 		//console.log(this.miny);
 		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
-		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1)>0?game.player.pos.x-(CANVAS_WIDTH>>1):0;
+		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1);//>0?game.player.pos.x-(CANVAS_WIDTH>>1):0;
 		var i = Math.floor(this.minx/TILE_DIM);
 		var h_end= i +this.htiles;
 		var j = Math.floor(this.miny/TILE_DIM);
