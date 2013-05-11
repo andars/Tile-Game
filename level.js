@@ -15,6 +15,7 @@ var Level = function(ctx){
 	this.mapcanvas.width= MAP_WIDTH * TILE_DIM;
 	this.mapcanvas.height = MAP_WIDTH * TILE_DIM;
 	this.mapctx = this.mapcanvas.getContext('2d');
+	this.dirtymap = true;
 }
 Level.prototype = {
 	getTile: function(x,y){
@@ -45,7 +46,7 @@ Level.prototype = {
 				}
 			}
 			that.loaded = true;
-			that.rendermap();
+			
 		}
 		levelreq.open('get','./'+'map.json',true);
 		levelreq.send();
@@ -85,9 +86,15 @@ Level.prototype = {
 
 			}
 		}
+		this.dirtymap = false;
 		
 	},
 	render:function(){
+		if (!this.loaded) return;
+		if (this.dirtymap){
+			this.rendermap();
+			
+		}
 		this.miny = game.player.pos.y-(CANVAS_HEIGHT>>1);
 		this.minx = game.player.pos.x-(CANVAS_WIDTH>>1);
 		this.gamectx.drawImage(this.mapcanvas,this.minx, this.miny, CANVAS_WIDTH, CANVAS_HEIGHT, 0,0,CANVAS_WIDTH, CANVAS_HEIGHT);
