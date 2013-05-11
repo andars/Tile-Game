@@ -27,9 +27,9 @@ var game = {
 	},
 	render: function(){
 		if(game.level.loaded){
-		game.ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
-		game.level.render();
-		game.player.render(game.ctx);
+			//game.ctx.clearRect(0,0,CANVAS_WIDTH,CANVAS_HEIGHT);
+			game.level.render();
+			game.player.render(game.ctx);
 		}
 	},
 	update: function(time){
