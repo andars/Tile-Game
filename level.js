@@ -9,8 +9,8 @@ var Level = function(ctx){
 	this.ctx = ctx;
 	this.load("abc");
 	this.loaded = false;
-	this.htiles = CANVAS_WIDTH/TILE_DIM;
-	this.vtiles = CANVAS_HEIGHT/TILE_DIM;
+	this.htiles = Math.ceil(CANVAS_WIDTH/TILE_DIM);
+	this.vtiles = Math.ceil(CANVAS_HEIGHT/TILE_DIM);
 }
 Level.prototype = {
 	getTile: function(x,y){
