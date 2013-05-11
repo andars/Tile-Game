@@ -47,7 +47,7 @@ Level.prototype = {
 				}
 			}
 			that.loaded = true;
-			
+			that.rendermap();
 		}
 		levelreq.open('get','./'+'map.json',true);
 		levelreq.send();
