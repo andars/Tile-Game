@@ -11,7 +11,7 @@ var game = {
 		game.level = new Level(game.ctx);
 		
 		//timing
-		game.fps = 40;
+		game.fps = 60;
 		game.then = window.performance.now();
 		game.interval = 1000/game.fps;
 		handler.init();
