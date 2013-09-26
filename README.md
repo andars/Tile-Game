@@ -1,3 +1,3 @@
 Tile-Game
 =========
-Tile-Game is a project in Javascript using "<canvas>" to implement a tilemap-based game
+Tile-Game is a project in Javascript using HTML5 canvas to implement a tilemap-based game
