@@ -22,7 +22,7 @@ var handler = {
 		);
 		document.getElementById('gamecanvas').addEventListener('keydown', 
 			function(event){
-				console.log(event.keyCode);
+				//console.log(event.keyCode);
 				if([32, 37, 38, 39, 40].indexOf(event.keyCode) > -1) {
         			event.preventDefault();
     			}
